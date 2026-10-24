@@ -1,0 +1,39 @@
+# Catalytic Quantum Routing
+
+> Optimal initialized-workspace versus depth for cyclic translation on a nearest-neighbor quantum ring.
+
+## Authoritative scientific account
+
+- [Model and theorem](science/model.md): n data qubits on a ring, translation by 1 <= k <= floor(n/2), m initialized qubits, optimized placement, and arbitrary finite borrowed work. Defines both exact and approximate channel contracts.
+- [Exact converse](science/exact_capacity.md): cut factorization, arbitrary-correlated-catalyst entropy capacity, and 12 D m >= n k in its stated shallow regime.
+- [Approximate converse](science/approximate_capacity.md): product-pure initialization and joint output diamond error epsilon < 1 imply at least k initialized qubits in every relevant D-site window, hence D m >= n k.
+- [Constructions](science/constructions.md): sparse counterflow and ancilla-free stable block exchange, with explicit depth and SWAP counts.
+- [Placement](science/placement.md): arbitrary-state empty-interval theorem at reduced-channel diamond error <= 1/192; requires no initialized-work return. Also records stronger product-pure local-capacity constraints.
+- [Interpretation](science/interpretation.md): operational meaning, scaling regimes, and boundaries of the conclusions.
+- [Related work](references/RELATED_WORK.md): primary attribution and the targeted novelty comparison.
+- [Bibliography](references/references.bib): bibliographic records for the sources used.
+- [Verification](verification/README.md): executable finite checks and the scope of their evidence.
+
+## Preserve these distinctions
+
+The uniform frontier is F(n,k,m) = min(n, k max(1, n/(m+1))). Exact depth lies between F/12 and 6F. Product-pure joint-return approximate depth, for unhalved diamond error epsilon < 1, lies between F/4 and 6F. The constants are not claimed sharp.
+
+Initialized work starts in a fixed state independent of the data and borrowed input. In the exact theorem this state may be mixed and spatially entangled. It must return as a complete physical state and decouple from the arbitrary input. Preservation of an inaccessible purification of that fixed mixed state is not required.
+
+Borrowed work is arbitrary and must undergo the identity channel, including all reference correlations. Do not substitute restoration of individual marginals.
+
+The approximate capacity theorem assumes product-pure initialized work and includes work return in the output channel. Do not generalize it to arbitrary mixed or entangled catalysts, or to approximate marginal return alone.
+
+Gates are unitary and supported within a site or neighboring sites. Layers use disjoint registers, not necessarily disjoint physical sites. On-site gates count. There are no intermediate resets, measurements, nonlocal gates, or instantaneous classical communication.
+
+The frontier optimizes initialized placement and state. The arbitrary-anchor construction and fixed-placement lower bounds do not constitute a matching theorem for every fixed irregular profile.
+
+The shift obstruction, inverse-copy circuit, catalytic invariance mechanism, and domain-wall proof strategy are prior ingredients. Preserve their attribution. The targeted source check is not an exhaustive proof of originality. Finite computations check their stated finite domains and do not replace the analytical proofs.
+
+## Reproduction
+
+Run python verification/run_all.py from the repository root with Python 3.10 or later. No external package is required.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at gogoko699@gmail.com.

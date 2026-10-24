@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "check_geometry": {
+      "depth_boundary_rank_cases": 1225,
+      "geometry_cases": 1225,
+      "injective_gap_neighborhood_cases": 1200,
+      "joint_boundary_rank_cases": 97,
+      "maximum_n": 100,
+      "minimum_n": 4,
+      "rank_count_cases": 20225,
+      "ring_sizes": 97,
+      "shift_boundary_rank_cases": 1225,
+      "status": "passed",
+      "touching_patch_geometry_cases": 25,
+      "window_count_cases": 1225
+    },
+    "routing": {
+      "balanced_frontier_cases": 11440,
+      "balanced_gap_cases": 527,
+      "counterflow_cases": 7136,
+      "domains": {
+        "all_anchor_subsets_up_to_n": 9,
+        "all_path_rotations_up_to_n": 64,
+        "allocated_registers": "0 through 2*n in balanced-frontier cases",
+        "balanced_frontier_up_to_n": 32
+      },
+      "invalid_layer_rejections": 4,
+      "layers_checked": 408047,
+      "path_rotation_cases": 2016,
+      "status": "passed",
+      "swaps_checked": 3652359
+    }
+  },
+  "python": "3.12.14",
+  "status": "passed"
+}
