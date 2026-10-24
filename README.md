@@ -55,7 +55,7 @@ Two exact constructions give the upper bound:
 | Construction | Initialized qubits used | Depth | SWAP gates |
 |---|---:|---:|---:|
 | Stable block exchange on a path | $`0`$ | $`n-1`$ | $`k(n-k)`$ |
-| Counterflow through balanced anchors | $`a=\min(m,n)`$ | $`k(\lceil n/a\rceil+1)`$ | $`k(n+a)`$ |
+| Counterflow through balanced anchors ($`m\ge1`$) | $`a=\min(m,n)`$ | $`k(\lceil n/a\rceil+1)`$ | $`k(n+a)`$ |
 
 The implementation uses the shallower circuit. For an arbitrary anchor pattern with largest cyclic spacing $`g`$, the counterflow schedule has depth $`k(g+1)`$. Its complete action is a data translation and the opposite permutation of the anchor registers. Any initialized state invariant under that ancillary permutation is returned, including identical mixed product states.
 
@@ -77,6 +77,14 @@ The connected account is organized by scientific topic:
 | [Verification](verification/README.md) | Runnable finite checks, recorded outputs, and their evidential limits |
 
 [Science overview](science/README.md) provides a continuous reading route. [llms.txt](llms.txt) identifies the authoritative statements and assumptions for automated readers.
+
+## Learn the project
+
+The selected educational anchor is Terry Farrelly's [*A review of Quantum Cellular Automata*](https://quantum-journal.org/papers/q-2020-11-30-368/), *Quantum* **4**, 368 (2020), using [arXiv version 2](https://arxiv.org/html/1904.13318v2).
+
+Start with the [Farrelly-to-routing bridge](learning/farrelly_bridge.md), which connects the review's circuits, shifts, and index theory to the return contracts and capacity proofs here. A complete eight-site example shows how the data move and the initialized registers carry the opposite flow.
+
+The [30-milestone map](learning/milestones.md) organizes understanding into **14 background/preliminary milestones** and **16 narrative/innovation milestones**. Each phase moves from local objects and mechanisms toward the global contribution. The targets are defined by the science and apply to any reader. [Learning overview](learning/README.md) explains how to use the bridge, map, and canonical proofs together.
 
 ## Scope and attribution
 

@@ -171,7 +171,7 @@ The two available gate counts are explicit:
 | Schedule | Initialized registers used | Depth | SWAP count |
 |---|---:|---:|---:|
 | Stable block exchange | $`0`$ | $`n-1`$ | $`k(n-k)`$ |
-| Balanced counterflow | $`a=\min\{m,n\}`$ | $`k(\lceil n/a\rceil+1)`$ | $`k(n+a)`$ |
+| Balanced counterflow ($`m\ge1`$) | $`a=\min\{m,n\}`$ | $`k(\lceil n/a\rceil+1)`$ | $`k(n+a)`$ |
 
 Unused borrowed and initialized registers contribute identity wires. If the depths tie, the schedule with fewer SWAPs may be selected.
 
