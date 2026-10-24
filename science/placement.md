@@ -19,13 +19,14 @@ W(\rho_{SB}\otimes\sigma_A)W^\dagger
 
 Let $`\mathcal T_k`$ denote translation of every data register by $`k`$ sites to the right and the identity channel on all borrowed registers. The gap theorem assumes
 
+**Equation (1).**
+
 ```math
 \|\mathcal E-\mathcal T_k\|_\diamond\le\epsilon,
 \qquad
 \epsilon\le\frac1{192},
 \qquad
 1\le k\le\lfloor n/2\rfloor.
-\tag{1}
 ```
 
 This is a condition on the **complete data and borrowed channel**, including reference correlations. Returning each borrowed marginal separately is insufficient. There is no return requirement on $`A`$ in this theorem, and no product-state restriction on $`\sigma_A`$.
@@ -48,11 +49,12 @@ There are $`g(C)-1`$ empty sites in the largest gap. For $`C=\varnothing`$, defi
 
 **Theorem.** Under (1),
 
+**Equation (2).**
+
 ```math
 D\ge k,
 \qquad
 D\ge\left\lceil\frac{g(C)}4\right\rceil.
-\tag{2}
 ```
 
 More locally, if $`4D<n`$, there cannot be an initialized-work-free interval of $`4D`$ consecutive sites.
@@ -81,9 +83,10 @@ Thus $`X`$ contains two adjacent blocks of $`D`$ sites, and its radius-$`D`$ nei
 
 For every operator $`O`$ supported on the full data and borrowed algebra of $`X`$, strict circuit locality gives
 
+**Equation (3).**
+
 ```math
 W^\dagger(O\otimes I_A)W=K_{SB}\otimes I_A,
-\tag{3}
 ```
 
 where $`K_{SB}`$ is supported in $`I`$. No initialized register occurs in that support. Multiple disjoint-register gates at one physical site do not enlarge the propagation radius beyond one site per layer.
@@ -111,6 +114,8 @@ Diamond norm dominates the induced trace norm. Duality between induced trace nor
 
 After restricting to the operator algebra on $`X`$ and embedding outputs with identity on initialized registers, this becomes
 
+**Equation (4).**
+
 ```math
 \left\|
 \left[
@@ -119,7 +124,6 @@ After restricting to the operator algebra on $`X`$ and embedding outputs with id
 \right](O)
 \right\|_\infty
 \le\epsilon\|O\|_\infty.
-\tag{4}
 ```
 
 Here $`\mathrm{Ad}_U(O)=UOU^\dagger`$. No square-root loss or dimension factor enters (4). This is why arbitrarily large borrowed registers are permitted.
@@ -134,9 +138,10 @@ Define $`\beta`$ on this same infinite-chain algebra by shifting only the unifor
 
 The backward causal neighborhoods of operators on $`X`$ lie in the injective interval $`I`$. Their finite-ring and infinite-chain images therefore agree under the natural tensor-factor identification. This assertion uses the actual periodically lifted gates, rather than an independently chosen infinite-chain completion. The ideal shift images agree as well. Tensoring identity factors preserves operator norm, so (4) is precisely
 
+**Equation (5).**
+
 ```math
 \| (\alpha-\beta)|_{\mathcal A_X}\|\le\epsilon.
-\tag{5}
 ```
 
 ### 4. Block and compare indices
@@ -174,10 +179,11 @@ The existence of finite-depth opposite translations and state-invariant catalyti
 
 The [approximate capacity theorem](approximate_capacity.md#local-capacity-theorem) gives a more detailed placement condition for initialized qubits. Let $`m_i`$ be their number at site $`i`$, let $`q=\lfloor n/4\rfloor`$, and require product-pure initialization with full joint-return diamond error less than one. For $`1\le k\le q`$ and $`D\le q`$,
 
+**Equation (6).**
+
 ```math
 \sum_{i\in[x-D,x)}m_i\ge k
 \qquad\text{for every cut }x.
-\tag{6}
 ```
 
 This is a capacity condition in every window of $`D`$ consecutive sites, not merely a condition that every window contains one initialized site. Summation gives $`DM\ge nk`$.
@@ -195,10 +201,11 @@ r\in\{0,1,\ldots,n\}:
 
 with $`R_k=+\infty`$ if $`M<k`$. Then every circuit satisfying that theorem obeys
 
+**Equation (7).**
+
 ```math
 D\ge\min\{q+1,R_k(\mathbf m)\},
 \qquad D\ge k.
-\tag{7}
 ```
 
 For $`k=1`$ and at least one occupied site, $`R_1(\mathbf m)=g(C)`$. For larger $`k`$, nearby registers can contribute several qubits, but capacity concentrated far from a cut cannot satisfy (6) at small depth. No matching characterization for every fixed capacity profile is asserted by (7); it is the placement-sensitive necessary condition proved by the local spectral argument.

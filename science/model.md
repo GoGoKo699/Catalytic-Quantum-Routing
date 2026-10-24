@@ -45,6 +45,8 @@ Opposite shifts have the same depth by reversing the ring's orientation. The ide
 
 An exact implementation satisfies, for every state $`\rho_{SBR}`$ and arbitrary reference system $`R`$,
 
+**Equation (1).**
+
 ```math
 \begin{aligned}
 &(W_{SBA}\otimes I_R)(\rho_{SBR}\otimes\sigma_A)
@@ -53,7 +55,6 @@ An exact implementation satisfies, for every state $`\rho_{SBR}`$ and arbitrary 
 (T_k\otimes I_{BR})\rho_{SBR}
 (T_k^\dagger\otimes I_{BR})\otimes\sigma_A .
 \end{aligned}
-\tag{1}
 ```
 
 Thus the data operation is correct on every input, borrowed work is restored through the identity channel, and initialized work is returned uncorrelated with the data and borrowed work.
@@ -78,9 +79,10 @@ For product-pure initialized work, local basis choices let us write its state as
 
 The approximate return condition is
 
+**Equation (2).**
+
 ```math
 \|\mathcal F_W-\mathcal G_k\|_\diamond\le\epsilon.
-\tag{2}
 ```
 
 The diamond norm here has no factor $`1/2`$; its largest distance between channels is two. The constant-error theorem holds for every $`0\le\epsilon<1`$. It controls restoration and residual correlations as well as the data operation. If work is returned exactly pure, the output necessarily factors and a reduced-channel error bound suffices. Approximate marginal return by itself is not substituted for (2).
@@ -89,31 +91,34 @@ The diamond norm here has no factor $`1/2`$; its largest distance between channe
 
 For qubit data and $`m`$ initialized qubits, define
 
+**Equation (3).**
+
 ```math
 F(n,k,m)=
 \min\!\left\{n,\,
 k\max\!\left(1,\frac{n}{m+1}\right)\right\}.
-\tag{3}
 ```
 
 Let $`D_{\rm ex}^{*}(n,k,m)`$ be the minimum exact depth after optimizing the placement and fixed initial state of the initialized work and allowing arbitrary finite borrowed work. Let $`D_{\rm p}^{*}(n,k,m;\epsilon)`$ be the corresponding minimum with product-pure initialized work and the joint error condition (2).
 
 **Theorem 1 (optimal depth with reusable workspace).** For every $`n\ge2`$, $`m\ge0`$, and $`1\le k\le\lfloor n/2\rfloor`$,
 
+**Equation (4).**
+
 ```math
 \frac1{12}F(n,k,m)
 \le D_{\rm ex}^{*}(n,k,m)
 \le 6F(n,k,m).
-\tag{4}
 ```
 
 For every $`0\le\epsilon<1`$,
+
+**Equation (5).**
 
 ```math
 \frac14F(n,k,m)
 \le D_{\rm p}^{*}(n,k,m;\epsilon)
 \le 6F(n,k,m).
-\tag{5}
 ```
 
 The constants are explicit safe bounds, not optimal finite-size constants. Both minima have the same asymptotic scaling. Entanglement and mixedness of the initialized catalyst, as well as arbitrarily large borrowed work, cannot improve the exact scaling.
@@ -124,21 +129,25 @@ Set $`q=\lfloor n/4\rfloor`$. Strict circuit locality gives $`D\ge k`$ for an ex
 
 If $`D\ge q+1`$, then $`D>n/4\ge F/4`$. Otherwise $`D\le q`$, so $`k\le q`$ by the propagation bound. The [exact capacity theorem](exact_capacity.md) gives
 
+**Equation (6).**
+
 ```math
 12Dm\ge nk,
-\tag{6}
 ```
 
 and the [product-pure finite-error theorem](approximate_capacity.md) gives
 
+**Equation (7).**
+
 ```math
 Dm\ge nk.
-\tag{7}
 ```
 
 If $`m=0`$, either inequality excludes this shallow branch. If $`m>0`$, use $`F\le nk/m`$ when $`m<n`$; for $`m\ge n-1`$, the direct bound $`D\ge k=F`$ already suffices. These observations prove the lower bounds in (4) and (5), including the small rings with $`q=0`$.
 
 The [constructions](constructions.md) give, with $`a=\min(m,n)`$,
+
+**Equation (8).**
 
 ```math
 D\le
@@ -146,7 +155,6 @@ D\le
 n-1,&m=0,\\[2mm]
 \min\{n-1,\ k(\lceil n/a\rceil+1)\},&m\ge1.
 \end{cases}
-\tag{8}
 ```
 
 They return the initialized work exactly. For $`1\le m<n`$, the elementary bounds $`\lceil n/m\rceil+1\le n/m+2`$ and $`m+1\le2m`$ give (8) $`\le6F`$. For $`m\ge n`$, the bound $`2k`$ suffices. This proves both upper bounds.
