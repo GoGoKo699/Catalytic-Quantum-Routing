@@ -132,7 +132,7 @@ Conjugate the actual and target outputs by $`V_x^\dagger V_y^\dagger`$, then tak
 \widehat\rho_L=W_L\rho_{\mathrm{in},L}W_L^\dagger.
 ```
 
-Thus $`\widehat\rho_L`$ is supported on a projector $`P`$ of rank $`r`$, and $`\operatorname{Tr}(P\widehat\rho_L)=1`$.
+Thus $`\widehat\rho_L`$ is supported on a projector $`P`$ of rank $`r`$, and $`\mathrm{Tr}(P\widehat\rho_L)=1`$.
 
 The target is a tensor product over sites. The two cut patches are disjoint, so their conjugated target states and all outside target factors remain independent. The pure patch $`P_y`$ starts in a pure product state on data, borrowed work, and initialized work. Its reduced left state after $`V_y^\dagger`$ has operator norm at most one.
 
@@ -142,11 +142,11 @@ On the mixed patch $`P_x`$, write $`Q=Q_LQ_R`$ for data plus borrowed registers 
 \frac{I_Q}{\dim Q}\otimes|0\rangle\langle0|_K,
 ```
 
-whose operator norm is $`1/\dim Q`$. Unitary conjugation preserves this norm. For a positive operator $`H`$, the inequality $`H\le\|H\|_\infty I`$ implies $`\operatorname{Tr}_YH\le(\dim Y)\|H\|_\infty I`$. Applying it to the right part of the patch yields
+whose operator norm is $`1/\dim Q`$. Unitary conjugation preserves this norm. For a positive operator $`H`$, the inequality $`H\le\|H\|_\infty I`$ implies $`\mathrm{Tr}_YH\le(\dim Y)\|H\|_\infty I`$. Applying it to the right part of the patch yields
 
 ```math
 \left\|
-\operatorname{Tr}_{Q_RK_R}
+\mathrm{Tr}_{Q_RK_R}
 \left[
 V_x^\dagger
 \left(\frac{I_Q}{\dim Q}\otimes|0\rangle\langle0|_K\right)
@@ -172,7 +172,7 @@ Here $`K_R`$ consists precisely of the initialized qubits at the $`D`$ sites $`[
 The target weight in the rank-$`r`$ subspace is bounded by
 
 ```math
-\operatorname{Tr}(P\widehat\sigma_L)
+\mathrm{Tr}(P\widehat\sigma_L)
 \le r\|\widehat\sigma_L\|_\infty
 \le\frac{\dim K_R}{2^k}.
 ```

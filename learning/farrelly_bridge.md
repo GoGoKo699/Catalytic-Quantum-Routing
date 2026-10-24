@@ -33,11 +33,11 @@ O_j\longmapsto U^\dagger O_jU.
 The first describes the output state. The second asks which input operator has the same measurement statistics. Their equivalence follows from
 
 ```math
-\operatorname{Tr}(O_jU\rho U^\dagger)
-=\operatorname{Tr}(U^\dagger O_jU\,\rho).
+\mathrm{Tr}(O_jU\rho U^\dagger)
+=\mathrm{Tr}(U^\dagger O_jU\,\rho).
 ```
 
-Here $`\operatorname{Tr}`$ denotes the trace, and $`U^\dagger`$ is the adjoint of $`U`$.
+Here $`\mathrm{Tr}`$ denotes the trace, and $`U^\dagger`$ is the adjoint of $`U`$.
 
 This repository defines $`T_k`$ to move the input at $`i`$ to output $`i+k`$. Therefore
 
@@ -117,7 +117,7 @@ The one-dimensional QCA index distinguishes a shift from a circuit on an infinit
 Taking the logarithm defines an additive convention,
 
 ```math
-\nu(\alpha)=\log_2\operatorname{ind}(\alpha).
+\nu(\alpha)=\log_2\mathrm{ind}(\alpha).
 ```
 
 Products of indices become sums. A circuit then has $`\nu=0`$, and a $`k`$-step shift has $`\nu=k\log_2d`$ in this orientation. Replacing an automorphism by its inverse reverses that sign. The [placement proof](../science/placement.md#the-index-stability-input) only needs the distinction between zero and nonzero index.

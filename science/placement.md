@@ -12,7 +12,7 @@ A depth-$`D`$ circuit $`W`$ contains unitary gates within a site or between neig
 
 ```math
 \mathcal E(\rho_{SB})
-=\operatorname{Tr}_A\!\left[
+=\mathrm{Tr}_A\!\left[
 W(\rho_{SB}\otimes\sigma_A)W^\dagger
 \right].
 ```
@@ -94,7 +94,7 @@ The adjoint of the reduced channel is
 
 ```math
 \mathcal E^\dagger(O)
-=\operatorname{Tr}_A\!\left[
+=\mathrm{Tr}_A\!\left[
 (I_{SB}\otimes\sigma_A)
 W^\dagger(O\otimes I_A)W
 \right].
@@ -114,15 +114,15 @@ After restricting to the operator algebra on $`X`$ and embedding outputs with id
 ```math
 \left\|
 \left[
-\operatorname{Ad}_{W^\dagger}
--\operatorname{Ad}_{T^{-k}\otimes I_B\otimes I_A}
+\mathrm{Ad}_{W^\dagger}
+-\mathrm{Ad}_{T^{-k}\otimes I_B\otimes I_A}
 \right](O)
 \right\|_\infty
 \le\epsilon\|O\|_\infty.
 \tag{4}
 ```
 
-Here $`\operatorname{Ad}_U(O)=UOU^\dagger`$. No square-root loss or dimension factor enters (4). This is why arbitrarily large borrowed registers are permitted.
+Here $`\mathrm{Ad}_U(O)=UOU^\dagger`$. No square-root loss or dimension factor enters (4). This is why arbitrarily large borrowed registers are permitted.
 
 ### 3. Lift the actual circuit to an infinite chain
 
