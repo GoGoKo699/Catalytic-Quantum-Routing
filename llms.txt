@@ -14,6 +14,20 @@
 - [Bibliography](references/references.bib): bibliographic records for the sources used.
 - [Verification](verification/README.md): executable finite checks and the scope of their evidence.
 
+## Learning entrypoints
+
+- [Learning overview](learning/README.md): how the common learning material connects to the authoritative science.
+- [Farrelly bridge](learning/farrelly_bridge.md): the one selected educational anchor, Terry Farrelly's A review of Quantum Cellular Automata, Quantum 4, 368 (2020), arXiv:1904.13318v2. Maps source sections, notation, conventions, and missing steps to this project's return contracts and finite capacity bounds.
+- [Milestone map](learning/milestones.md): exactly M01–M30, with 14 background/preliminary and 16 narrative/innovation targets. The allocation and understanding targets are project-defined and independent of a reader's assessment history.
+
+## Reader routes
+
+- For the story: start with science/model.md, follow the mechanism in science/constructions.md, and connect the regimes in science/interpretation.md.
+- For self-directed study: use learning/farrelly_bridge.md alongside learning/milestones.md; follow each source pointer to the exact statement when needed.
+- For a theorem or assumption: read science/model.md and the corresponding authoritative proof file, including its stated return condition and parameter range.
+- For reproduction: read verification/README.md and run the documented checks; distinguish a current execution from the stored results.
+- For attribution: read references/RELATED_WORK.md. Farrelly is the educational anchor; the primary research papers remain sources for imported ingredients rather than additional assigned anchors.
+
 ## Preserve these distinctions
 
 The uniform frontier is F(n,k,m) = min(n, k max(1, n/(m+1))). Exact depth lies between F/12 and 6F. Product-pure joint-return approximate depth, for unhalved diamond error epsilon < 1, lies between F/4 and 6F. The constants are not claimed sharp.
@@ -29,6 +43,8 @@ Gates are unitary and supported within a site or neighboring sites. Layers use d
 The frontier optimizes initialized placement and state. The arbitrary-anchor construction and fixed-placement lower bounds do not constitute a matching theorem for every fixed irregular profile.
 
 The shift obstruction, inverse-copy circuit, catalytic invariance mechanism, and domain-wall proof strategy are prior ingredients. Preserve their attribution. The targeted source check is not an exhaustive proof of originality. Finite computations check their stated finite domains and do not replace the analytical proofs.
+
+The learning bridge explains concepts and worked examples; it does not replace the full proofs or expand their hypotheses. Completion of repository material does not establish any reader's mastery. Use the same fixed milestone map for every reader and keep individual assessment records outside the scientific account.
 
 ## Reproduction
 

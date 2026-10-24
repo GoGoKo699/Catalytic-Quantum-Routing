@@ -29,9 +29,10 @@ Initialized work begins in a product of pure states over sites. Local basis choi
 
 Here $`T`$ translates data one site to the right. Assume the **full joint-return error** satisfies
 
+**Equation (1).**
+
 ```math
 \|\mathcal F-\mathcal G_k\|_\diamond\le\epsilon<1.
-\tag{1}
 ```
 
 The diamond norm and trace norm are unhalved: perfectly distinguishable states have trace distance two. Condition (1) includes the state of the returned initialized work and all output correlations. It also protects borrowed work together with any reference system.
@@ -68,16 +69,18 @@ Intervals below are half-open cyclic intervals of integer sites; for example, $`
 
 **Theorem.** Let $`n\ge4`$, $`1\le k\le q`$, and $`1\le D\le q`$. Under condition (1), every cut $`x`$ obeys
 
+**Equation (2).**
+
 ```math
 \sum_{i\in[x-D,x)}m_i\ge k.
-\tag{2}
 ```
 
 In particular,
 
+**Equation (3).**
+
 ```math
 DM\ge nk.
-\tag{3}
 ```
 
 Equality $`D=q`$ is allowed, including when $`4D=n`$.
@@ -86,9 +89,10 @@ Equality $`D=q`$ is allowed, including when $`4D=n`$.
 
 Fix a cut $`x`$ and put $`y=x+\ell`$. Let $`L=[x,y)`$ and let $`R`$ be its complement. The [cut-factorization lemma](exact_capacity.md#cut-factorization) gives
 
+**Equation (4).**
+
 ```math
 W=V_xV_y(W_L\otimes W_R),
-\tag{4}
 ```
 
 where $`V_c`$ is supported in
@@ -115,9 +119,10 @@ There are $`\ell-q`$ mixed target data qubits in $`L`$ and $`\ell-q-k`$ mixed in
 
 The input left marginal is a normalized projector of some rank $`r`$. The target left marginal is a normalized projector of rank
 
+**Equation (5).**
+
 ```math
 r\,2^k.
-\tag{5}
 ```
 
 The factor $`r`$ includes the dimensions of all mixed borrowed registers in $`L`$. These dimensions need not be equal at different sites.
@@ -132,7 +137,7 @@ Conjugate the actual and target outputs by $`V_x^\dagger V_y^\dagger`$, then tak
 \widehat\rho_L=W_L\rho_{\mathrm{in},L}W_L^\dagger.
 ```
 
-Thus $`\widehat\rho_L`$ is supported on a projector $`P`$ of rank $`r`$, and $`\operatorname{Tr}(P\widehat\rho_L)=1`$.
+Thus $`\widehat\rho_L`$ is supported on a projector $`P`$ of rank $`r`$, and $`\mathrm{Tr}(P\widehat\rho_L)=1`$.
 
 The target is a tensor product over sites. The two cut patches are disjoint, so their conjugated target states and all outside target factors remain independent. The pure patch $`P_y`$ starts in a pure product state on data, borrowed work, and initialized work. Its reduced left state after $`V_y^\dagger`$ has operator norm at most one.
 
@@ -142,11 +147,13 @@ On the mixed patch $`P_x`$, write $`Q=Q_LQ_R`$ for data plus borrowed registers 
 \frac{I_Q}{\dim Q}\otimes|0\rangle\langle0|_K,
 ```
 
-whose operator norm is $`1/\dim Q`$. Unitary conjugation preserves this norm. For a positive operator $`H`$, the inequality $`H\le\|H\|_\infty I`$ implies $`\operatorname{Tr}_YH\le(\dim Y)\|H\|_\infty I`$. Applying it to the right part of the patch yields
+whose operator norm is $`1/\dim Q`$. Unitary conjugation preserves this norm. For a positive operator $`H`$, the inequality $`H\le\|H\|_\infty I`$ implies $`\mathrm{Tr}_YH\le(\dim Y)\|H\|_\infty I`$. Applying it to the right part of the patch yields
+
+**Equation (6).**
 
 ```math
 \left\|
-\operatorname{Tr}_{Q_RK_R}
+\mathrm{Tr}_{Q_RK_R}
 \left[
 V_x^\dagger
 \left(\frac{I_Q}{\dim Q}\otimes|0\rangle\langle0|_K\right)
@@ -154,15 +161,15 @@ V_x
 \right]
 \right\|_\infty
 \le \frac{\dim K_R}{\dim Q_L}.
-\tag{6}
 ```
 
 Multiplying the operator norms of the independent factors, and using the target rank (5), gives
 
+**Equation (7).**
+
 ```math
 \|\widehat\sigma_L\|_\infty
 \le\frac{\dim K_R}{r\,2^k}.
-\tag{7}
 ```
 
 Here $`K_R`$ consists precisely of the initialized qubits at the $`D`$ sites $`[x-D,x)`$.
@@ -172,12 +179,14 @@ Here $`K_R`$ consists precisely of the initialized qubits at the $`D`$ sites $`[
 The target weight in the rank-$`r`$ subspace is bounded by
 
 ```math
-\operatorname{Tr}(P\widehat\sigma_L)
+\mathrm{Tr}(P\widehat\sigma_L)
 \le r\|\widehat\sigma_L\|_\infty
 \le\frac{\dim K_R}{2^k}.
 ```
 
 The binary measurement $`\{P,I-P\}`$ therefore gives
+
+**Equation (8).**
 
 ```math
 \begin{aligned}
@@ -185,7 +194,6 @@ The binary measurement $`\{P,I-P\}`$ therefore gives
 &\ge\|\widehat\rho_L-\widehat\sigma_L\|_1\\
 &\ge2\left[1-\frac{\dim K_R}{2^k}\right].
 \end{aligned}
-\tag{8}
 ```
 
 The first inequality follows from (1), invariance under the same unitary conjugation, and contractivity under taking the left marginal. The lower bound remains valid when its right side is negative.
@@ -198,17 +206,19 @@ Sum (2) over all $`n`$ cuts. Each initialized qubit belongs to exactly $`D`$ of 
 
 For $`d`$-level data and arbitrary finite initialized dimensions $`a_i=\dim A_i`$, the same proof gives
 
+**Equation (9).**
+
 ```math
 \prod_{i\in[x-D,x)}a_i
 \ge(1-\epsilon/2)d^k.
-\tag{9}
 ```
 
 Writing $`M=\sum_i\log_2a_i`$ and summing logarithms gives
 
+**Equation (10).**
+
 ```math
 DM\ge n\left[k\log_2d+\log_2(1-\epsilon/2)\right].
-\tag{10}
 ```
 
 No integer rounding of $`\log_2a_i`$ is assumed in (10). The stronger error-independent qubit bound (3) uses the specific dimensions $`a_i=2^{m_i}`$ and integer $`m_i`$.
@@ -217,9 +227,10 @@ No integer rounding of $`\log_2a_i`$ is assumed in (10). The stronger error-inde
 
 For qubits with $`1\le k\le q`$, the theorem can be stated without assuming short depth as
 
+**Equation (11).**
+
 ```math
 D\ge\min\left\{q+1,\left\lceil\frac{nk}{M}\right\rceil\right\},
-\tag{11}
 ```
 
 where the second term is infinite when $`M=0`$. The independent light-cone bound $`D\ge k`$ applies for the full range $`1\le k\le\lfloor n/2\rfloor`$. When $`k>q`$ or $`n<4`$, that bound already gives the required linear-in-$`n`$ branch, up to an absolute constant.

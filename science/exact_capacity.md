@@ -56,23 +56,27 @@ The cut labeled $`x`$ lies between sites $`x-1`$ and $`x`$.
 
 **Theorem 1: local and total initialized capacity.** Suppose $`1\le k\le q`$ and an exact implementation has depth $`D\le q`$. Then, for every cut $`x`$,
 
+**Equation (1).**
+
 ```math
 k\log_2 d
 \le
 3\bigl[a(P_x(D))+a(P_{x+\ell}(D))\bigr].
-\tag{1}
 ```
 
 Consequently,
 
+**Equation (2).**
+
 ```math
 12DM\ge nk\log_2 d.
-\tag{2}
 ```
 
 No assumption of a product state, full rank, or absence of long-range entanglement is imposed on $`\sigma_A`$. The number and dimensions of the borrowed registers do not appear in these bounds.
 
 For $`1\le k\le q`$, a convenient unconditional consequence is
+
+**Equation (3).**
 
 ```math
 D\ge
@@ -80,7 +84,6 @@ D\ge
 k,\;
 \min\left\{q+1,\frac{nk\log_2 d}{12M}\right\}
 \right\},
-\tag{3}
 ```
 
 where the quotient is interpreted as infinity when $`M=0`$. For $`k>q`$, the ordinary propagation bound $`D\ge k>n/4`$ already gives linear depth.
@@ -101,12 +104,13 @@ L^c=\mathbb Z_n\setminus L.
 
 If $`2D\le \min\{\ell,n-\ell\}`$, every depth-$`D`$ circuit has both factorizations
 
+**Equation (4).**
+
 ```math
 W=(W_L\otimes W_{L^c})V_xV_{x+\ell}
 =
 \widetilde V_x\widetilde V_{x+\ell}
 (W_L\otimes W_{L^c}),
-\tag{4}
 ```
 
 where each of $`V_c,\widetilde V_c`$ is supported on $`P_c(D)`$. The two boundary patches are disjoint. The same internal circuit $`W_L\otimes W_{L^c}`$ can be used in both expressions.
@@ -127,12 +131,13 @@ W_0=G_D\cdots G_1=W_L\otimes W_{L^c}.
 
 Let $`G_{<t}=G_{t-1}\cdots G_1`$, with $`G_{<1}=I`$. An exact telescoping identity gives
 
+**Equation (5).**
+
 ```math
 W_0^\dagger W
 =
 \prod_{t=D}^{1}
 G_{<t}^\dagger C_tG_{<t},
-\tag{5}
 ```
 
 where larger $`t`$ appears farther left. A crossing gate at cut $`c`$ initially acts only on sites $`c-1,c`$. Conjugating it through $`t-1`$ internal layers enlarges its support to at most
@@ -156,23 +161,27 @@ This proof allows many distinct registers at each site and arbitrary gates withi
 
 where $`\omega_Q`$ is either a pure product across $`Q_L|Q_R`$ or the completely mixed state on $`Q`$. The state $`\rho_{KZ}`$ is arbitrary. Then
 
+**Equation (6).**
+
 ```math
 S(L)_{\rm after}-S(L)_{\rm before}
 \ge -3\log_2\dim K.
-\tag{6}
 ```
 
 **Proof.** Put $`X=Q_LK_L`$. The outside marginal $`Z_L`$ is unchanged, so the change of $`S(L)`$ equals the change of $`S(X|Z_L)`$. Initially,
+
+**Equation (7).**
 
 ```math
 S(X|Z_L)_{\rm before}
 =
 S(Q_L)+S(K_L|Z_L)
 \le S(Q_L)+\log_2\dim K_L.
-\tag{7}
 ```
 
 The output $`X`$ is obtained from $`QK`$ by a channel. Data processing therefore gives
+
+**Equation (8).**
 
 ```math
 I(X:Z_L)_{\rm after}
@@ -180,12 +189,13 @@ I(X:Z_L)_{\rm after}
 =
 I(K:Z_L)_{\rm before}
 \le 2\log_2\dim K.
-\tag{8}
 ```
 
 For a pure product $`\omega_Q`$, the initial $`S(Q_L)`$ is zero and the final $`S(X)`$ is nonnegative. Combining (7), (8), and $`S(X|Z_L)=S(X)-I(X:Z_L)`$ gives (6).
 
 For completely mixed $`\omega_Q`$, entropy conservation on the entire patch and the dimension bound on its right part imply
+
+**Equation (9).**
 
 ```math
 \begin{aligned}
@@ -193,7 +203,6 @@ S(X)_{\rm after}
 &\ge S(QK)_{\rm after}-S(Q_RK_R)_{\rm after}\\
 &\ge \log_2\dim Q_L-\log_2\dim K_R.
 \end{aligned}
-\tag{9}
 ```
 
 Since $`S(Q_L)=\log_2\dim Q_L`$, the same combination yields
@@ -224,11 +233,12 @@ The data in $`P_0(D)`$ are all pure, and the data in $`P_\ell(D)`$ are all compl
 
 There are initially $`q`$ completely mixed data qudits in $`L`$. A right shift by $`k\le q`$ reduces this number to $`q-k`$. Borrowed registers are returned by identity, and the initialized state is returned in product with the data and borrowed registers. Hence the desired transformation has
 
+**Equation (10).**
+
 ```math
 S(L)_{\rm out}-S(L)_{\rm in}
 =
 -k\log_2d.
-\tag{10}
 ```
 
 Use the input-side factorization in Lemma 2. The internal factors $`W_L,W_{L^c}`$ preserve $`S(L)`$. Apply Lemma 3 first to $`V_0`$ and then to $`V_\ell`$. The second patch's uninitialized registers are still pure or completely mixed and independent of the rest, because the first patch is disjoint. Its initialized registers may have become correlated with outside registers, which Lemma 3 permits. Equation (10) then proves (1).
@@ -274,13 +284,14 @@ k\max\left\{1,\frac{n}{m+1}\right\}
 
 For every $`n\ge2`$, $`m\ge0`$, and $`1\le k\le\lfloor n/2\rfloor`$,
 
+**Equation (11).**
+
 ```math
 \frac{F(n,k,m)}{12}
 \le
 D_{\rm ex}^*(n,k,m)
 \le
 6F(n,k,m).
-\tag{11}
 ```
 
 The explicit upper circuits and their sharper depth and SWAP counts are given in [Constructions](constructions.md#balanced-placement-and-the-frontier).

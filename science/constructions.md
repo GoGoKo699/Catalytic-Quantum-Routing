@@ -31,9 +31,10 @@ partition the ring. Their lengths are $`g_j`$.
 
 **Proposition 1: one-step counterflow.** There is a circuit of depth $`g+1`$, using exactly $`n+a`$ SWAP gates, whose complete action is
 
+**Equation (1).**
+
 ```math
 W_{\rm cf}=T_S\otimes C_A^{-1}\otimes I_B.
-\tag{1}
 ```
 
 Here $`T_S`$ moves each data input one site to the right, and $`C_A`$ moves the input at anchor index $`j`$ to anchor index $`j+1`$. The borrowed registers $`B`$ are untouched.
@@ -63,11 +64,12 @@ Thus every data input moves one physical site right and every ancillary input mo
 
 There are $`a`$ initial gates, $`\sum_j(g_j-1)=n-a`$ sweep gates, and $`a`$ final gates. Therefore
 
+**Equation (2).**
+
 ```math
 D_{\rm cf}=g+1,
 \qquad
 N_{\rm SWAP,cf}=n+a.
-\tag{2}
 ```
 
 These counts include the case $`a=1`$, where the auxiliary permutation is identity, and $`a=n`$, where there are no sweep rounds.
@@ -84,18 +86,20 @@ T_S^k\otimes C_A^{-k}\otimes I_B,
 
 with resources
 
+**Equation (3).**
+
 ```math
 D_{\rm cf}^{(k)}=k(g+1),
 \qquad
 N_{\rm SWAP,cf}^{(k)}=k(n+a).
-\tag{3}
 ```
 
 For an initialized state $`\sigma_A`$ independent of the arbitrary data and borrowed input, the final state of the initialized work is $`C_A^{-k}\sigma_AC_A^k`$. Hence exact catalytic return holds whenever
 
+**Equation (4).**
+
 ```math
 C_A^k\sigma_AC_A^{-k}=\sigma_A.
-\tag{4}
 ```
 
 In particular, $`\sigma_A=\tau^{\otimes a}`$ works for every $`k`$ and every single-register state $`\tau`$, including pure and maximally mixed states. An entangled state invariant under the same anchor permutation also works. Invariance under the $`k`$th power is sufficient for return after the entire circuit; invariance after every individual repetition is not required.
@@ -124,9 +128,10 @@ r=u-i+j
 
 at the data edge
 
+**Equation (5).**
+
 ```math
 (i+j-2,\;i+j-1).
-\tag{5}
 ```
 
 The rounds run from $`1`$ to $`n-1`$. Within a round, $`j=r-u+i`$, so the starting sites of successive scheduled edges differ by two. Their registers are disjoint.
@@ -154,6 +159,8 @@ b_j=\left\lfloor\frac{jn}{a}\right\rfloor,
 
 The gaps are either $`\lfloor n/a\rfloor`$ or $`\lceil n/a\rceil`$, so $`g=\lceil n/a\rceil`$. Extra initialized registers, if $`m>n`$, remain untouched. Choose the shallower of Propositions 1 and 2:
 
+**Equation (6).**
+
 ```math
 D_{\rm upper}(n,k,m)
 \le
@@ -163,7 +170,6 @@ n-1, & m=0,\\[2mm]
 k\left(\left\lceil\frac{n}{\min\{m,n\}}\right\rceil+1\right)\right\},
 & m\ge1.
 \end{cases}
-\tag{6}
 ```
 
 The two available gate counts are explicit:
@@ -171,7 +177,7 @@ The two available gate counts are explicit:
 | Schedule | Initialized registers used | Depth | SWAP count |
 |---|---:|---:|---:|
 | Stable block exchange | $`0`$ | $`n-1`$ | $`k(n-k)`$ |
-| Balanced counterflow | $`a=\min\{m,n\}`$ | $`k(\lceil n/a\rceil+1)`$ | $`k(n+a)`$ |
+| Balanced counterflow ($`m\ge1`$) | $`a=\min\{m,n\}`$ | $`k(\lceil n/a\rceil+1)`$ | $`k(n+a)`$ |
 
 Unused borrowed and initialized registers contribute identity wires. If the depths tie, the schedule with fewer SWAPs may be selected.
 
